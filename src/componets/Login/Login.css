@@ -1,0 +1,301 @@
+.loginForm {
+    width: 400px;
+    margin: 0 auto;
+    z-index: 99;
+    display: block;
+    /* margin-top: 15%; */
+    background: transparent;
+    border-radius: .25em .25em .4em .4em;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(25, 25, 25, 0.125);
+    border-radius: 5px;
+    /* margin-top: 17%; */
+}
+.login_main{ display: table;
+    vertical-align: middle;
+    width: 100%;
+    height: 100vh;
+}
+.login{ vertical-align: middle;
+    display: table-cell;
+    height: 100%;
+    width: 100%;
+}
+hgroup {
+    text-align: center;
+    margin-top: 3em;
+    /* opacity: 0.7; */
+    padding: 30px;
+}
+.icon-lg.icon-rect, .icon-lg.icon-rounded, .icon-lg.icon-circle, .icon-lg.icon-outlined {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 36px;
+}
+.icon-default {
+    color: #434345;
+    border-color: #d9d9d9;
+}
+.icon-circle {
+    border-radius: 50%;
+}
+.icon-rect, .icon-circle, .icon-rounded, .icon-outlined {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    line-height: 70px;
+    text-align: center;
+    border: 2px solid;
+}
+.icon {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 56px;
+    font-style: normal;
+}
+.mdi-account-multiple-outline:before {
+    content: "\f10e";
+}
+.icon:before {
+    display: inline-block;
+    position: relative;
+}
+.page .text-darker {
+    color: #434345 !important;
+}
+.big {
+    font-size: 106.25%;
+    line-height: 1.470588235294118;
+}
+.page .text-dark {
+    color: #9b9b9b !important;
+}
+.font-weight-bold {
+    font-weight: 700 !important;
+    color: #434345;
+}
+form {
+    padding: 30px;
+    padding-top: 60px;
+    background: #fff;
+}
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+/* input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: transparent;
+    color: #42b574;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ddd;
+} */
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #4a89dc;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+/* label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+} */
+.buttonui1 {
+    position: relative;
+    padding: 6px 147px;
+    line-height: 30px;
+    overflow: hidden;
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #42b574;
+    color: #ecf0f1;
+    transition: background-color .3s;
+}
+.buttonui1:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: rgba(236, 240, 241, .3);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.buttonui1 span {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+.ripples {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+    cursor: pointer;
+}
+.ripplesCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+}
+.powered {
+    padding: 10px;
+    margin-top: -16px;
+    line-height: 25px;
+}
+.powered a {
+    color: #55bbeb;
+    text-decoration: none;
+}
+div.background {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    right: -10%;
+}
+div.background:before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: 0;
+    width: 100%;
+    height: 35%;
+    /* opacity: 0.8; */
+    background-color: #42b574;
+    border-bottom: 30px solid #ef6644;
+    transform-origin: 100% 100%;
+    transform: skewY(30deg);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-shadow: 0px 0px 20px #89898a;
+}
+div.background2 {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    left: 6%;
+}
+div.background2:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #42b574;
+    border-bottom: 30px solid #ef6644;
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    -webkit-transform: skewX(60deg);
+    -ms-transform: skewX(60deg);
+    transform: skewX(60deg);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-shadow: 0px 0px 20px #89898a;
+}
+input:focus {
+    outline: none;
+}
+input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 54%;
+}
+.bar:before {
+    left: 50%;
+}
+.bar:after {
+    right: 46%;
+}
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+input:focus ~ label, input.used ~ label {
+    top: -20px;
+    -webkit-transform: scale(.75);
+    transform: scale(.75);
+    left: -2px;
+    color: #4a89dc;
+}
+.buttonui1:hover {
+   background: #05508f;    
+}
+.errorMsg {
+    color: #cc0000;
+    margin-bottom: 12px;
+}
+.sucessMsg {
+    color: #6B8E23;
+    margin-bottom: 10px;
+  }
+  .flsmsg {
+    margin-left: 440px;
+    margin-bottom: 100px
+    
+}
+
+.flsmsg span.errorlogin {
+    padding: 20px 65px;
+    background: white;
+    border-radius: 5px;
+    color: red;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
