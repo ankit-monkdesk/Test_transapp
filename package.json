@@ -2,7 +2,7 @@
   "name": "true",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ankit-monkdesk.github.io/TrueApp",
+  "homepage": "https://github.com/ankit-monkdesk/TrueApp",
   "dependencies": {
     "axios": "^0.19.0",
     "base-64": "^0.1.0",
