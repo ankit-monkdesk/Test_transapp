@@ -60,7 +60,7 @@ class Add_company extends Component {
         formData.append('cid', company_id);
         formData.append('token', token);
       
-      axios.post('/tps_api/index.php?view=companysetup',formData,init)
+      axios.post('https://idea.truebook.in/tps_api/index.php?view=companysetup',formData,init)
       .then(response => {
         this.props.history.push("/list_company");
       })
