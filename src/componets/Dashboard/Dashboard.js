@@ -147,7 +147,7 @@ class Dashboard extends Component {
       <div className="main_dashboard">
       
      
-         <Router basename='/'>
+         <Router >
            <div>
            <Header>
            <img src={true_trans} alt="true_trans" />
