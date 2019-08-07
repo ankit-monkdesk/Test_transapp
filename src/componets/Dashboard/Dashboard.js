@@ -57,7 +57,7 @@ const Header = styled.div`
 
 
 `;
-const Dropdown_content = styled.div`
+const DropdownContent = styled.div`
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -79,7 +79,7 @@ const Dropdown_content = styled.div`
 const Dropdown = styled.div`
     float: right;
     overflow: hidden;
-    &:hover ${Dropdown_content} {
+    &:hover ${DropdownContent} {
       display: block;
       position:fixed;
       text-decoration: none;
@@ -155,11 +155,11 @@ class Dashboard extends Component {
                   <Dropbtn >Profile 
                     &nbsp;  <i className="fa fa-caret-down"></i>
                   </Dropbtn>
-                  <Dropdown_content>
+                  <DropdownContent>
                     <Link className="selected" to="/profile">Profile</Link>
                     <a onClick={this.logout}>Logout</a>
                     
-                  </Dropdown_content>
+                  </DropdownContent>
                 </Dropdown> 
                 <NavLink  exact className="selected"  activeStyle={{
                     fontWeight: "bold",
