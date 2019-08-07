@@ -4,7 +4,7 @@ import './App.css';
 /* Components */
 import Login from './componets/Login/Login';
 import Registration from './componets/Registration/Registration';
-import  Dashboard from './componets/Dashboard/Dashboard';
+import Dashboard from './componets/Dashboard/Dashboard';
 
 
 class App extends Component {
