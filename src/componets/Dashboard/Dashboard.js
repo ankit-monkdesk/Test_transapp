@@ -157,7 +157,7 @@ class Dashboard extends Component {
                   </Dropbtn>
                   <DropdownContent>
                     <Link className="selected" to="/profile">Profile</Link>
-                    <Dropbtn onClick={this.logout}>Logout</Dropbtn>
+                    <a  onClick={this.logout}>Logout</a>
                     
                   </DropdownContent>
                 </Dropdown> 
