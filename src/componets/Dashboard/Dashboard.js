@@ -171,11 +171,11 @@ class Dashboard extends Component {
             <Content>
          
               <SubContent>
-               
+               <Switch>
                 <Route  path="/home_page" component={HomePage}/> 
                 <Route  path="/add_company" component={Add_company}/>
                 <Route  path="/profile" component={Profile}/>
-
+                </Switch>
               </SubContent>
                
             </Content>
