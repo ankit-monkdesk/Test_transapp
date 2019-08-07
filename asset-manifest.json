@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Test_transapp/static/css/main.ba41d441.chunk.css",
+    "main.js": "/Test_transapp/static/js/main.bc997476.chunk.js",
+    "main.js.map": "/Test_transapp/static/js/main.bc997476.chunk.js.map",
+    "runtime~main.js": "/Test_transapp/static/js/runtime~main.da8a3425.js",
+    "runtime~main.js.map": "/Test_transapp/static/js/runtime~main.da8a3425.js.map",
+    "static/css/2.120a16f4.chunk.css": "/Test_transapp/static/css/2.120a16f4.chunk.css",
+    "static/js/2.8ed9dc9e.chunk.js": "/Test_transapp/static/js/2.8ed9dc9e.chunk.js",
+    "static/js/2.8ed9dc9e.chunk.js.map": "/Test_transapp/static/js/2.8ed9dc9e.chunk.js.map",
+    "index.html": "/Test_transapp/index.html",
+    "precache-manifest.64b24d8d357c8d57d2a5633ce0fcd8ab.js": "/Test_transapp/precache-manifest.64b24d8d357c8d57d2a5633ce0fcd8ab.js",
+    "service-worker.js": "/Test_transapp/service-worker.js",
+    "static/css/2.120a16f4.chunk.css.map": "/Test_transapp/static/css/2.120a16f4.chunk.css.map",
+    "static/css/main.ba41d441.chunk.css.map": "/Test_transapp/static/css/main.ba41d441.chunk.css.map",
+    "static/media/font-awesome.min.css": "/Test_transapp/static/media/fontawesome-webfont.fee66e71.woff"
+  }
+}
