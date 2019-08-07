@@ -15,6 +15,7 @@ class Registration extends React.Component{
             message:false,
             request_time:'',
             otp:'',
+            bytes_otp:'',
             msgcode:'',
             msgcode1:'',
             msg:false,
@@ -65,13 +66,14 @@ class Registration extends React.Component{
          
          // alert(msg);
       
-          //var bytes = base64.decode(otp);
+          var bytes = base64.decode(otp);
          
           this.setState({
             request_time:tm,
             otp:otp,
             msg:msg1,
-            msgcode:response.data.msgcode
+            msgcode:response.data.msgcode,
+            bytes_otp:bytes
           });
           
           
@@ -96,8 +98,7 @@ class Registration extends React.Component{
          
           var bytes = base64.decode(this.state.otp);
          
-       
-         
+          
           if(bytes !== this.state.fields.verifyno){
             
             //  alert ('OTP NOT VALID PLEASE CHECK YOUR OTP');
@@ -147,7 +148,7 @@ class Registration extends React.Component{
 
           if(msgcode===0){
             
-              // this.props.history.push("/");
+               this.props.history.push("/");
           }
           this.setState({
             company_id:company_id
@@ -249,27 +250,20 @@ class Registration extends React.Component{
     render() {
       const password= this.state.fields.password
       const re_password= this.state.fields.cpassword
-      const bytes =  base64.decode(this.state.otp);
-     //const bytesotp = this.state.bytes_otp;
-     //alert(bytesotp);
-
-      // if(bytes !== this.state.fields.verifyno){
-      //    alert ('OTP NOT VALID PLEASE CHECK YOUR OTP');
-      //   return false;
-      // }
+     const bytes =this.state.bytes_otp
+    
       
     
   
       const error =  <FlashMessage duration={3000} persistOnHover={true}>
       <span className="errormsg">{this.state.msg}</span>
-     
         </FlashMessage>;
  
       const success =  <FlashMessage duration={2000}>
       <span className="sendmsg">{this.state.msg}</span>
         </FlashMessage>; 
 
-      const Reg_success =  <FlashMessage duration={5000}>
+      const Reg_success =  <FlashMessage duration={4000}>
       <span className="sendmsg">sussessfully Registration..!Please Login </span>
         </FlashMessage>; 
 
@@ -285,9 +279,7 @@ class Registration extends React.Component{
                    <div className="registerForm"> 
                         <hgroup>
                           <div>
-                             {bytes !== this.state.fields.verifyno && this.state.fields.verifyno != null ? <FlashMsgOtp />: "" } 
-                            
-                           
+                           {bytes !== this.state.fields.verifyno && this.state.fields.verifyno != null ? <FlashMsgOtp />: "" } 
                             {re_password !==  password ? <FlashMsgPsw />:""}
                             {this.state.msgcode1 === 0 ? Reg_success:""}
                           </div>
@@ -335,7 +327,7 @@ class Registration extends React.Component{
                         <div className="group">
                             <input ref="cpassword" type="password" placeholder="Confirm Password" name="cpassword" className="tpass" value={this.state.fields["cpassword"]} onChange={this.handleChange.bind(this,"cpassword")}/><span className="highlight"></span><span className="bar"></span>
                             <span className="errorMsg">{this.state.errors.cpassword}</span>
-                            {/* {(password !== re_password && re_password !=='')  ? passwordNotMatch:''} */}
+                         
                           
                         </div>
                             <button onClick={this.RegistrationDetailSend.bind(this)} type="button" className="buttonui2"> <span> Register </span>
