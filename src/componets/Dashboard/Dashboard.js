@@ -147,7 +147,7 @@ class Dashboard extends Component {
       <div className="main_dashboard">
       
      
-         <Router basename='/dashboard'>
+         <Router basename="/dashboard">
            <div>
            <Header>
            <img src={true_trans} alt="true_trans" />
@@ -161,7 +161,7 @@ class Dashboard extends Component {
                     
                   </DropdownContent>
                 </Dropdown> 
-                <NavLink   className="selected"  activeStyle={{
+                <NavLink  exact className="selected"  activeStyle={{
                     fontWeight: "bold",
                     color: "red"
                   }} to="/home_page" >Home</NavLink >
@@ -172,9 +172,10 @@ class Dashboard extends Component {
          
               <SubContent>
                
-                <Route  path="/home_page" component={HomePage}/> 
+                <Route exact path="/home_page" component={HomePage}/> 
                 <Route  path="/add_company" component={Add_company}/>
                 <Route  path="/profile" component={Profile}/>
+
               </SubContent>
                
             </Content>
