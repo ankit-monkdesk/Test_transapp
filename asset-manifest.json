@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Test_transapp/static/css/main.ba41d441.chunk.css",
-    "main.js": "/Test_transapp/static/js/main.f99fad36.chunk.js",
-    "main.js.map": "/Test_transapp/static/js/main.f99fad36.chunk.js.map",
+    "main.js": "/Test_transapp/static/js/main.73b7c6a7.chunk.js",
+    "main.js.map": "/Test_transapp/static/js/main.73b7c6a7.chunk.js.map",
     "runtime~main.js": "/Test_transapp/static/js/runtime~main.da8a3425.js",
     "runtime~main.js.map": "/Test_transapp/static/js/runtime~main.da8a3425.js.map",
     "static/css/2.120a16f4.chunk.css": "/Test_transapp/static/css/2.120a16f4.chunk.css",
     "static/js/2.a3f27b40.chunk.js": "/Test_transapp/static/js/2.a3f27b40.chunk.js",
     "static/js/2.a3f27b40.chunk.js.map": "/Test_transapp/static/js/2.a3f27b40.chunk.js.map",
     "index.html": "/Test_transapp/index.html",
-    "precache-manifest.79db0d6e7103c76c9bc3a365235088ec.js": "/Test_transapp/precache-manifest.79db0d6e7103c76c9bc3a365235088ec.js",
+    "precache-manifest.444ca482c18e8286de2a963eef4e075e.js": "/Test_transapp/precache-manifest.444ca482c18e8286de2a963eef4e075e.js",
     "service-worker.js": "/Test_transapp/service-worker.js",
     "static/css/2.120a16f4.chunk.css.map": "/Test_transapp/static/css/2.120a16f4.chunk.css.map",
     "static/css/main.ba41d441.chunk.css.map": "/Test_transapp/static/css/main.ba41d441.chunk.css.map",
