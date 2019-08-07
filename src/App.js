@@ -12,11 +12,11 @@ class App extends Component {
     return (
       <div className="app">
         <Router basename='/'>
-          <Switch>
+         
               <Route   path="/" component={Login}/>
               <Route  path="/dashboard" component={Dashboard} />
               <Route  path="/register" component={Registration} /> 
-          </Switch>
+      
         </Router>
        
       </div>
