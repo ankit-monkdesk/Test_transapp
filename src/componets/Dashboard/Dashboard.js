@@ -57,7 +57,7 @@ const Header = styled.div`
 
 
 `;
-const Dropdown_Content = styled.div`
+const Dropdown_content = styled.div`
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -79,7 +79,7 @@ const Dropdown_Content = styled.div`
 const Dropdown = styled.div`
     float: right;
     overflow: hidden;
-    &:hover ${Dropdown_Content} {
+    &:hover ${Dropdown_content} {
       display: block;
       position:fixed;
       text-decoration: none;
@@ -107,11 +107,11 @@ const Content_div = styled.div`
     width: 100%;
 `;
 
-const HomePage_tittle = styled.div`
+const Homepage_tittle = styled.div`
     text-align: center;
     color: cornflowerblue;
 `;
-const Company_Button = styled.button`
+const Company_button = styled.button`
 &a{
   text-decoration: none;
 }
@@ -155,11 +155,11 @@ class Dashboard extends Component {
                   <Dropbtn >Profile 
                     &nbsp;  <i className="fa fa-caret-down"></i>
                   </Dropbtn>
-                  <Dropdown_Content>
+                  <Dropdown_content>
                     <Link className="selected" to="/profile">Profile</Link>
                     <a onClick={this.logout}>Logout</a>
                     
-                  </Dropdown_Content>
+                  </Dropdown_content>
                 </Dropdown> 
                 <NavLink  exact className="selected"  activeStyle={{
                     fontWeight: "bold",
@@ -209,7 +209,7 @@ class AddCompany extends Component{
     return(
       <Addcompany>
         
-           <Link to='/add_company'><Company_Button className="btn btn-success" >+ Add Company</Company_Button></Link>
+           <Link to='/add_company'><Company_button className="btn btn-success" >+ Add Company</Company_button></Link>
         
       </Addcompany>
     );
@@ -229,9 +229,9 @@ class HomePage extends Component{
    
     return(
       <div>
-        <HomePage_tittle>
+        <Homepage_tittle>
           <h1>Welcome to TrueTrans</h1>
-        </HomePage_tittle>
+        </Homepage_tittle>
 
         {Company_id === "" && User_type === "Admin" ?
         <AddCompany/>:""}
