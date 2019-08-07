@@ -100,18 +100,18 @@ width: 100%;
 height: 100vh;
 `;
 
-const Content_div = styled.div`
+const SubContent = styled.div`
     vertical-align: middle;
     display: table-cell;
     height: 100%;
     width: 100%;
 `;
 
-const Homepage_tittle = styled.div`
+const HomepageTittle = styled.div`
     text-align: center;
     color: cornflowerblue;
 `;
-const Company_button = styled.button`
+const CompanyButton = styled.button`
 &a{
   text-decoration: none;
 }
@@ -157,7 +157,7 @@ class Dashboard extends Component {
                   </Dropbtn>
                   <DropdownContent>
                     <Link className="selected" to="/profile">Profile</Link>
-                    <a onClick={this.logout}>Logout</a>
+                    <a href="/" onClick={this.logout}>Logout</a>
                     
                   </DropdownContent>
                 </Dropdown> 
@@ -170,12 +170,12 @@ class Dashboard extends Component {
 
             <Content>
          
-              <Content_div>
+              <SubContent>
                
                 <Route exactly path="/home_page" component={HomePage}/> 
                 <Route path="/add_company" component={Add_company}/>
                 <Route path="/profile" component={Profile}/>
-              </Content_div>
+              </SubContent>
                
             </Content>
 
@@ -209,7 +209,7 @@ class AddCompany extends Component{
     return(
       <Addcompany>
         
-           <Link to='/add_company'><Company_button className="btn btn-success" >+ Add Company</Company_button></Link>
+           <Link to='/add_company'><CompanyButton className="btn btn-success" >+ Add Company</CompanyButton></Link>
         
       </Addcompany>
     );
@@ -229,9 +229,9 @@ class HomePage extends Component{
    
     return(
       <div>
-        <Homepage_tittle>
+        <HomepageTittle>
           <h1>Welcome to TrueTrans</h1>
-        </Homepage_tittle>
+        </HomepageTittle>
 
         {Company_id === "" && User_type === "Admin" ?
         <AddCompany/>:""}
