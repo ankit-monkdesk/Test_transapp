@@ -26,7 +26,7 @@ class App extends Component {
 }
 export default
 () => (
-  <div  basename={process.env.PUBLIC_URL}>
+  <div  basename="/">
      <Router >
           <Route component={App} />
      </Router>
