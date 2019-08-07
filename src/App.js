@@ -26,8 +26,8 @@ class App extends Component {
 }
 export default
 () => (
-  <div  basename="/">
-     <Router >
+  <div >
+     <Router  basename="/">
           <Route component={App} />
      </Router>
  </div>
