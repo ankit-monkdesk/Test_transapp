@@ -26,7 +26,7 @@ class App extends Component {
 }
 export default
 () => (
-  <div basename="/Test_transapp/">
+  <div basename="/">
      <Router >
           <Route component={App} />
      </Router>
