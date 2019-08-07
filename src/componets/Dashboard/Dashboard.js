@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route,BrowserRouter as Router,Link,NavLink} from 'react-router-dom';
+import { Route,HashRouter as Router,Link,NavLink} from 'react-router-dom';
 
 
 import styled from 'styled-components';
@@ -147,7 +147,7 @@ class Dashboard extends Component {
       <div className="main_dashboard">
       
      
-         <Router >
+         <Router basename='/'>
            <div>
            <Header>
            <img src={true_trans} alt="true_trans" />
