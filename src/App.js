@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route,BrowserRouter as Router,Switch} from 'react-router-dom';
+import { Route,HashRouter as Router,Switch} from 'react-router-dom';
 import './App.css';
 /* Components */
 import Login from './componets/Login/Login';
@@ -11,25 +11,24 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Router basename='/'>
+       
          <Switch>
               <Route  exact path="/" component={Login}/>
               <Route  exact path="/dashboard" component={Dashboard} />
               <Route  exact path="/register" component={Registration} /> 
           </Switch>
-      
-        </Router>
+
        
       </div>
     );
   }
  
 }
-export default App;
-// () => (
-//   <div>
-//      <Router>
-//           <Route component={App} />
-//      </Router>
-//  </div>
-// );
+export default
+() => (
+  <div>
+     <Router  basename='/'>
+          <Route component={App} />
+     </Router>
+ </div>
+);
