@@ -172,7 +172,7 @@ class Dashboard extends Component {
          
               <SubContent>
                
-                <Route  path="/home_page" component={HomePage}/> 
+                <Route exact path="/home_page" component={HomePage}/> 
                 <Route path="/add_company" component={Add_company}/>
                 <Route path="/profile" component={Profile}/>
               </SubContent>
