@@ -11,21 +11,24 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-      
+        <Router>
+          <Switch>
               <Route  exact path="/" component={Login}/>
               <Route  path="/dashboard" component={Dashboard} />
               <Route  path="/register" component={Registration} /> 
-        
+          </Switch>
+        </Router>
        
       </div>
     );
   }
  
 }
-export default () => (
-  <div>
-     <Router>
-          <Route component={App} />
-     </Router>
- </div>
-);
+export default App;
+// () => (
+//   <div>
+//      <Router>
+//           <Route component={App} />
+//      </Router>
+//  </div>
+// );
