@@ -147,7 +147,7 @@ class Dashboard extends Component {
       <div className="main_dashboard">
       
      
-         <Router basename='/'>
+         <Router >
            <div>
            <Header>
            <img src={true_trans} alt="true_trans" />
@@ -157,7 +157,7 @@ class Dashboard extends Component {
                   </Dropbtn>
                   <DropdownContent>
                     <Link className="selected" to="/profile">Profile</Link>
-                    <a  onClick={this.logout}>Logout</a>
+                    <a onClick={this.logout}>Logout</a>
                     
                   </DropdownContent>
                 </Dropdown> 
