@@ -161,7 +161,7 @@ class Dashboard extends Component {
                     
                   </Dropdown_Content>
                 </Dropdown> 
-                <NavLink  exact={true} className="selected"  activeStyle={{
+                <NavLink  exact className="selected"  activeStyle={{
                     fontWeight: "bold",
                     color: "red"
                   }} to="/home_page" >Home</NavLink >
