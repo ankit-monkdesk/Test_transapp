@@ -62,7 +62,7 @@ class Registration extends React.Component{
           const otp = response.data.data;
           const msg1 = response.data.MSG;
       
-          alert("one"+msg1);
+          // alert("one"+msg1);
           var bytes_otp = base64.decode(otp);
           
           
@@ -247,7 +247,7 @@ class Registration extends React.Component{
     
 
      
-      alert("2"+this.state.msg);
+      // alert("2"+this.state.msg);
       const error =  <FlashMessage duration={3000} persistOnHover={true}>
       <span className="errormsg">{this.state.msg}</span>
         </FlashMessage>;
