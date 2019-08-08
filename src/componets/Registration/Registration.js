@@ -262,7 +262,7 @@ class Registration extends React.Component{
         </FlashMessage>; 
 
     
-    
+      
             return (
             <div className="register_main"> 
              <div className="register">
