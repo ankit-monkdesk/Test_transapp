@@ -12,7 +12,6 @@ class Registration extends React.Component{
             errors: {},
             mobileno:'',
             loading:false,
-            message:false,
             request_time:'',
             otp:'',
             bytes_otp:'',
@@ -39,7 +38,6 @@ class Registration extends React.Component{
         
         this.setState({
           loading:true,
-          message:true,
           msg:true,
         })
        
@@ -63,17 +61,18 @@ class Registration extends React.Component{
           const tm = response.data.request_time;
           const otp = response.data.data;
           const msg1 = response.data.MSG;
-         
-         // alert(msg);
       
-          var bytes = base64.decode(otp);
+      
+          var bytes_otp = base64.decode(otp);
+          
+          
          
           this.setState({
             request_time:tm,
             otp:otp,
             msg:msg1,
             msgcode:response.data.msgcode,
-            bytes_otp:bytes
+            bytes_otp:bytes_otp
           });
           
           
@@ -82,7 +81,6 @@ class Registration extends React.Component{
           console.log(err);
           this.setState({
             loading:false,
-            message:false,
             msg:false
 
           })
@@ -250,14 +248,15 @@ class Registration extends React.Component{
     render() {
       const password= this.state.fields.password
       const re_password= this.state.fields.cpassword
-     const bytes =this.state.bytes_otp
+      const bytes = this.state.bytes_otp
     
-      
+
     
   
       const error =  <FlashMessage duration={3000} persistOnHover={true}>
       <span className="errormsg">{this.state.msg}</span>
         </FlashMessage>;
+       alert(this.state.msg);
  
       const success =  <FlashMessage duration={2000}>
       <span className="sendmsg">{this.state.msg}</span>
@@ -307,8 +306,8 @@ class Registration extends React.Component{
                             <input type="number" placeholder="Mobile No" name="mobileno" value={this.state.mobileno} onChange={this.MobileNoChange} className="tmobile" minLength="11"/><span className="highlight"></span><span className="rbar"></span>
                          
                             <button onClick= {this.sendMobileVerifyOtp} className="btn btn-deluge btn-sm" id="verifymobileno" name="verifymobileno" type="button">Send OTP</button>
-                            { this.state.msgcode===0 && this.state.message ? success :''}
-                            { this.state.msgcode===1 && this.state.message ? error :''}
+                            { this.state.msgcode === 0  ? success :''}
+                            { this.state.msgcode === 1  ? error :''}
                            
                             {/* { this.state.msgcode===0 && this.state.message ? success :this.state.message && this.state.msgcode===1 ? error :''} */}
                          
