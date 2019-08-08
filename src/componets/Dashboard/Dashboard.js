@@ -147,7 +147,7 @@ class Dashboard extends Component {
       <div className="main_dashboard">
       
      
-         <Router basename="/">
+         <Router basename={process.env.PUBLIC_URL}>
            <div>
            <Header>
            <img src={true_trans} alt="true_trans" />
@@ -172,7 +172,7 @@ class Dashboard extends Component {
          
               <SubContent>
                <Switch>
-                <Route  path="/home_page" component={HomePage}/> 
+                <Route exact path="/home_page" component={HomePage}/> 
                 <Route  path="/add_company" component={Add_company}/>
                 <Route  path="/profile" component={Profile}/>
                 </Switch>
