@@ -288,7 +288,7 @@ input:focus ~ label, input.used ~ label {
   }
   .flsmsg {
     margin-left: 440px;
-    margin-bottom: 100px
+    margin-bottom: 100px;
     
 }
 

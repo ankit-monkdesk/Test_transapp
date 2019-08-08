@@ -62,7 +62,7 @@ class Registration extends React.Component{
           const otp = response.data.data;
           const msg1 = response.data.MSG;
       
-      
+          alert("one"+msg1);
           var bytes_otp = base64.decode(otp);
           
           
@@ -74,14 +74,14 @@ class Registration extends React.Component{
             msgcode:response.data.msgcode,
             bytes_otp:bytes_otp
           });
-          
+         
           
         })
         .catch(err => {
           console.log(err);
           this.setState({
-            loading:false,
-            msg:false
+           loading:false,
+           msg:false
 
           })
         })
@@ -91,7 +91,7 @@ class Registration extends React.Component{
     
       RegistrationDetailSend(e){
         e.preventDefault();
-          // alert(this.state.mobileno);
+         
         if(this.handleValidation()){
          
           var bytes = base64.decode(this.state.otp);
@@ -184,12 +184,7 @@ class Registration extends React.Component{
            errors["name"] = "*Name is required";
         }
    
-        // if(typeof fields["name"] !== "undefined"){
-        //    if(!fields["name"].match(/^[a-zA-Z]+$/)){
-        //       formIsValid = false;
-        //       errors["name"] = "Only letters Allow";
-        //    }        
-        // }
+      
    
         //Email
         if(!fields["email"]){
@@ -246,17 +241,17 @@ class Registration extends React.Component{
     }
 
     render() {
-      const password= this.state.fields.password
-      const re_password= this.state.fields.cpassword
-      const bytes = this.state.bytes_otp
+      const password= this.state.fields.password;
+      const re_password= this.state.fields.cpassword;
+      const bytes = this.state.bytes_otp;
     
 
-    
-  
+     
+      alert("2"+this.state.msg);
       const error =  <FlashMessage duration={3000} persistOnHover={true}>
       <span className="errormsg">{this.state.msg}</span>
         </FlashMessage>;
-      //  alert(this.state.msg);
+        
  
       const success =  <FlashMessage duration={2000}>
       <span className="sendmsg">{this.state.msg}</span>
@@ -270,15 +265,12 @@ class Registration extends React.Component{
     
             return (
             <div className="register_main"> 
-              <div className="register">
+             <div className="register">
             
-     {/* <Dashboard company_id_blank={this.state.company_id}/> */}
-                  
-                {/* {this.loadingOrmessage()} */}
                    <div className="registerForm"> 
                         <hgroup>
                           <div>
-                           {bytes !== this.state.fields.verifyno && this.state.fields.verifyno != null ? <FlashMsgOtp />: "" } 
+                            {bytes !== this.state.fields.verifyno && this.state.fields.verifyno != null ? <FlashMsgOtp />: "" } 
                             {re_password !==  password && re_password != null ? <FlashMsgPsw />:""}
                             {this.state.msgcode1 === 0 ? Reg_success:""}
                           </div>

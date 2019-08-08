@@ -325,14 +325,13 @@ button#verifymobileno:hover {
     color: #6B8E23;
     margin-bottom: 10px;
   }
-  .errorMsg {
+  /* .errorMsg {
     color: #cc0000;
     margin-bottom: 12px;
     position: relative;
     top: -3px;
     right: -82px;
-
-}
+} */
 span.sendmsg {
     color: green;
     background: #e1efe7;
