@@ -147,7 +147,7 @@ class Dashboard extends Component {
       <div className="main_dashboard">
       
      
-         <Router basename="/">
+         <Router basename="/dashboard">
            <div>
            <Header>
            <img src={true_trans} alt="true_trans" />
@@ -156,7 +156,10 @@ class Dashboard extends Component {
                     &nbsp;  <i className="fa fa-caret-down"></i>
                   </Dropbtn>
                   <DropdownContent>
-                    <Link className="selected" to="/profile">Profile</Link>
+                    <NavLink className="selected" activeStyle={{
+                    fontWeight: "bold",
+                    color: "red"
+                  }} to="/profile">Profile</NavLink>
                     <a onClick={this.logout}>Logout</a>
                     
                   </DropdownContent>
