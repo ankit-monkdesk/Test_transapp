@@ -256,7 +256,7 @@ class Registration extends React.Component{
       const error =  <FlashMessage duration={3000} persistOnHover={true}>
       <span className="errormsg">{this.state.msg}</span>
         </FlashMessage>;
-       alert(this.state.msg);
+      //  alert(this.state.msg);
  
       const success =  <FlashMessage duration={2000}>
       <span className="sendmsg">{this.state.msg}</span>
@@ -279,7 +279,7 @@ class Registration extends React.Component{
                         <hgroup>
                           <div>
                            {bytes !== this.state.fields.verifyno && this.state.fields.verifyno != null ? <FlashMsgOtp />: "" } 
-                            {re_password !==  password ? <FlashMsgPsw />:""}
+                            {re_password !==  password && re_password != null ? <FlashMsgPsw />:""}
                             {this.state.msgcode1 === 0 ? Reg_success:""}
                           </div>
                         <div className="text-center">
