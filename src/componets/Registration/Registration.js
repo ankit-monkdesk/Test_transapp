@@ -17,8 +17,9 @@ class Registration extends React.Component{
             bytes_otp:'',
             msgcode:'',
             msgcode1:'',
-            msg:false,
-            company_id:''
+            msg:"",
+            company_id:'',
+            msg_reg:''
 
         }
         this.handleChange = this.handleChange.bind(this);
@@ -38,7 +39,7 @@ class Registration extends React.Component{
         
         this.setState({
           loading:true,
-          msg:true,
+          // msg:true,
         })
        
        // const passdata = mobileno
@@ -61,18 +62,13 @@ class Registration extends React.Component{
           const tm = response.data.request_time;
           const otp = response.data.data;
           const msg1 = response.data.MSG;
-      
-          // alert("one"+msg1);
-          var bytes_otp = base64.decode(otp);
-          
-          
-         
+        
           this.setState({
             request_time:tm,
             otp:otp,
             msg:msg1,
             msgcode:response.data.msgcode,
-            bytes_otp:bytes_otp
+           
           });
          
           
@@ -81,7 +77,7 @@ class Registration extends React.Component{
           console.log(err);
           this.setState({
            loading:false,
-           msg:false
+          //  msg:true
 
           })
         })
@@ -91,15 +87,15 @@ class Registration extends React.Component{
     
       RegistrationDetailSend(e){
         e.preventDefault();
-         
+       
         if(this.handleValidation()){
-         
           var bytes = base64.decode(this.state.otp);
+          this.setState({
+              bytes_otp:bytes
+          })
          
-          
           if(bytes !== this.state.fields.verifyno){
-            
-            //  alert ('OTP NOT VALID PLEASE CHECK YOUR OTP');
+          
             return false;
           }
 
@@ -136,23 +132,23 @@ class Registration extends React.Component{
           formData.append('request_time', this.state.request_time);
         axios.post('https://idea.truebook.in/tps_api/index.php?view=register',formData,init)
         .then(response => {
-          console.log(response.data.msgcode);
           const msgcode= response.data.msgcode;
           const company_id = response.data.data.tpsData.company_id;
           // localStorage.setItem('formData');
+          const msges = response.data.MSG;
+          alert(msges);
           this.setState({
-            msgcode1:response.data.msgcode
+            msgcode1:response.data.msgcode,
+            msg_reg:msges
+            
           });
 
           if(msgcode===0){
             
                this.props.history.push("/");
-          }
-          this.setState({
-            company_id:company_id
-          })
-        
+          }       
         })
+        
         .catch(err => {
           console.log(err);
         })
@@ -244,24 +240,23 @@ class Registration extends React.Component{
       const password= this.state.fields.password;
       const re_password= this.state.fields.cpassword;
       const bytes = this.state.bytes_otp;
-    
-
      
-      // alert("2"+this.state.msg);
+    
       const error =  <FlashMessage duration={3000} persistOnHover={true}>
       <span className="errormsg">{this.state.msg}</span>
         </FlashMessage>;
-        
- 
-      const success =  <FlashMessage duration={2000}>
+    
+      const success =  <FlashMessage duration={3000}>
       <span className="sendmsg">{this.state.msg}</span>
         </FlashMessage>; 
 
       const Reg_success =  <FlashMessage duration={4000}>
-      <span className="sendmsg">sussessfully Registration..!Please Login </span>
+      <span className="sendmsg">Successsfully Registration..!Please Login </span>
         </FlashMessage>; 
 
-    
+      const msg_reg =  <FlashMessage duration={4000}>
+      <span className="errormsg">{this.state.msg_reg} </span>
+        </FlashMessage>; 
       
             return (
             <div className="register_main"> 
@@ -270,9 +265,9 @@ class Registration extends React.Component{
                    <div className="registerForm"> 
                         <hgroup>
                           <div>
-                            {bytes !== this.state.fields.verifyno && this.state.fields.verifyno != null ? <FlashMsgOtp />: "" } 
+                            {bytes !== this.state.fields.verifyno && this.state.bytes_otp != "" && this.state.fields.verifyno != null ? <FlashMsgOtp />: "" } 
                             {re_password !==  password && re_password != null ? <FlashMsgPsw />:""}
-                            {this.state.msgcode1 === 0 ? Reg_success:""}
+                            {this.state.msgcode1 === 0 ? Reg_success:this.state.msgcode1 === 1 ? msg_reg :""}
                           </div>
                         <div className="text-center">
                         <span className="icon novi-icon icon-circle icon-bordered icon-lg icon-default fa fa-users"></span>
@@ -298,8 +293,8 @@ class Registration extends React.Component{
                             <input type="number" placeholder="Mobile No" name="mobileno" value={this.state.mobileno} onChange={this.MobileNoChange} className="tmobile" minLength="11"/><span className="highlight"></span><span className="rbar"></span>
                          
                             <button onClick= {this.sendMobileVerifyOtp} className="btn btn-deluge btn-sm" id="verifymobileno" name="verifymobileno" type="button">Send OTP</button>
-                            { this.state.msgcode === 0  ? success :''}
-                            { this.state.msgcode === 1  ? error :''}
+                            { this.state.msgcode === 0  && this.state.msg? success :''}
+                            { this.state.msgcode === 1 && this.state.msg ? error :''}
                            
                             {/* { this.state.msgcode===0 && this.state.message ? success :this.state.message && this.state.msgcode===1 ? error :''} */}
                          
