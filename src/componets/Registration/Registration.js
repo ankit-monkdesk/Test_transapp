@@ -133,10 +133,11 @@ class Registration extends React.Component{
         axios.post('https://idea.truebook.in/tps_api/index.php?view=register',formData,init)
         .then(response => {
           const msgcode= response.data.msgcode;
-          const company_id = response.data.data.tpsData.company_id;
+         // const company_id = response.data.data.tpsData.company_id;
           // localStorage.setItem('formData');
           const msges = response.data.MSG;
           alert(msges);
+          console.log(msges);
           this.setState({
             msgcode1:response.data.msgcode,
             msg_reg:msges
@@ -254,9 +255,11 @@ class Registration extends React.Component{
       <span className="sendmsg">Successsfully Registration..!Please Login </span>
         </FlashMessage>; 
 
-      const msg_reg =  <FlashMessage duration={4000}>
-      <span className="errormsg">{this.state.msg_reg} </span>
-        </FlashMessage>; 
+      const msg_reg = <div className="alert alert-warning alert-dismissible fade show">
+        <strong>oopps!..</strong> {this.state.msg_reg}
+        <button type="button" className="close" data-dismiss="alert">&times;</button>
+        </div>; 
+       
       
             return (
             <div className="register_main"> 
