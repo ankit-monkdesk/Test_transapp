@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route,BrowserRouter as Router,Switch} from 'react-router-dom';
+import {  browserHistory } from 'react-router';
 import './App.css';
 /* Components */
 import Login from './componets/Login/Login';
@@ -27,7 +28,7 @@ class App extends Component {
 export default
 () => (
   <div >
-     <Router basename={process.env.PUBLIC_URL+"/"}>
+     <Router history={browserHistory} basename={process.env.PUBLIC_URL+"/"}>
           <Route component={App} />
      </Router>
  </div>
