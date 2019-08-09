@@ -266,7 +266,7 @@ class Registration extends React.Component{
         </div>; 
 
       const mobile_err = <div className="alert alert-warning alert-dismissible fade show">
-        <strong>oopps!..</strong> Please Enter 10 Digits Mobileno
+         Please Enter 10 Digits Mobileno
         <button type="button" className="close" data-dismiss="alert">&times;</button>
         </div>; 
         
