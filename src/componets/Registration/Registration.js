@@ -17,7 +17,7 @@ class Registration extends React.Component{
             bytes_otp:'',
             msgcode:'',
             msgcode1:'',
-            msg:"",
+            msg:true,
             company_id:'',
             msg_reg:''
 
@@ -39,7 +39,7 @@ class Registration extends React.Component{
         
         this.setState({
           loading:true,
-          // msg:true,
+           msg:true,
         })
        
        // const passdata = mobileno
@@ -77,7 +77,7 @@ class Registration extends React.Component{
           console.log(err);
           this.setState({
            loading:false,
-          //  msg:true
+           msg:true
 
           })
         })
@@ -246,6 +246,7 @@ class Registration extends React.Component{
       const error =  <FlashMessage duration={3000} persistOnHover={true}>
       <span className="errormsg">{this.state.msg}</span>
         </FlashMessage>;
+       
     
       const success =  <FlashMessage duration={3000}>
       <span className="sendmsg">{this.state.msg}</span>
