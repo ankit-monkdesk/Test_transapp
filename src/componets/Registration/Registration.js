@@ -36,6 +36,7 @@ class Registration extends React.Component{
       sendMobileVerifyOtp(e) {
         e.preventDefault();
         const mobileno= this.state.mobileno
+         if( mobileno.length == 10){
         
         this.setState({
           loading:true,
@@ -81,7 +82,10 @@ class Registration extends React.Component{
 
           })
         })
-  
+      }
+      else{
+       
+      }
       }
       
     
@@ -240,6 +244,7 @@ class Registration extends React.Component{
       const password= this.state.fields.password;
       const re_password= this.state.fields.cpassword;
       const bytes = this.state.bytes_otp;
+      const mobileno = this.state.mobileno;
      
     
       const error =  <FlashMessage duration={3000} persistOnHover={true}>
@@ -259,7 +264,12 @@ class Registration extends React.Component{
         <strong>oopps!..</strong> {this.state.msg_reg}
         <button type="button" className="close" data-dismiss="alert">&times;</button>
         </div>; 
-       
+
+      const mobile_err = <div className="alert alert-warning alert-dismissible fade show">
+        <strong>oopps!..</strong> Please Enter 10 Digits Mobileno
+        <button type="button" className="close" data-dismiss="alert">&times;</button>
+        </div>; 
+        
       
             return (
             <div className="register_main"> 
@@ -268,6 +278,7 @@ class Registration extends React.Component{
                    <div className="registerForm"> 
                         <hgroup>
                           <div>
+                            {mobileno.length !== 10 && mobileno != "" ? mobile_err:""}
                             {bytes !== this.state.fields.verifyno && this.state.bytes_otp != "" && this.state.fields.verifyno != null ? <FlashMsgOtp />: "" } 
                             {re_password !==  password && re_password != null ? <FlashMsgPsw />:""}
                             {this.state.msgcode1 === 0 ? Reg_success:this.state.msgcode1 === 1 ? msg_reg :""}
