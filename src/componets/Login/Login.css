@@ -287,9 +287,8 @@ input:focus ~ label, input.used ~ label {
     margin-bottom: 10px;
   }
   .flsmsg {
-    margin-left: 440px;
-    margin-bottom: 100px;
-    
+    margin-left: 513px;
+    margin-bottom: 40px;  
 }
 
 .flsmsg span.errorlogin {
