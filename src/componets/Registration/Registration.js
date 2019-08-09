@@ -136,8 +136,7 @@ class Registration extends React.Component{
          // const company_id = response.data.data.tpsData.company_id;
           // localStorage.setItem('formData');
           const msges = response.data.MSG;
-          alert(msges);
-          console.log(msges);
+          
           this.setState({
             msgcode1:response.data.msgcode,
             msg_reg:msges
