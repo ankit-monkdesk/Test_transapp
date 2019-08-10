@@ -6,6 +6,7 @@ import './App.css';
 import Login from './componets/Login/Login';
 import Registration from './componets/Registration/Registration';
 import Dashboard from './componets/Dashboard/Dashboard';
+import {PrivateRoute} from "./componets/PrivateRoute";
 
 
 class App extends Component {
@@ -14,8 +15,8 @@ class App extends Component {
       <div className="app">
        
          <Switch>
-              <Route  exact path="/" component={Login}/>
-              <Route   path="/dashboard" component={Dashboard} />
+              <Route exact path="/" component={Login}/>
+              <Route exact  path="/dashboard" component={Dashboard} />
               <Route   path="/register" component={Registration} /> 
           </Switch>
 
@@ -28,7 +29,7 @@ class App extends Component {
 export default
 () => (
   <div >
-     <Router  basename={process.env.PUBLIC_URL+"/"}>
+     <Router  basename={process.env.PUBLIC_URL}>
           <Route component={App} />
      </Router>
  </div>
