@@ -16,7 +16,7 @@ class App extends Component {
        
          <Switch>
               <Route exact path="/" component={Login}/>
-              <Route   path="/dashboard" component={Dashboard} />
+              <Route exact path="/dashboard" component={Dashboard} />
               <Route   path="/register" component={Registration} /> 
           </Switch>
 
@@ -29,7 +29,8 @@ class App extends Component {
 export default
 () => (
   <div >
-     <Router  basename="/">
+      <Router  basename={process.env.PUBLIC_URL}> 
+  
           <Route component={App} />
      </Router>
  </div>
