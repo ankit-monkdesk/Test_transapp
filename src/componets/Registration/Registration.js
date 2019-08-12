@@ -163,7 +163,7 @@ class Registration extends React.Component{
       
        else{
        
-           alert("please fillup fields");
+          //  alert("please fillup fields");
 
         //  this.props.history.push("/register");
 

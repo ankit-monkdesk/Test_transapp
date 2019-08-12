@@ -69,7 +69,7 @@ class Add_company extends Component {
         console.log(err);
       })
      }else{
-       alert("Please Fill Up Fields");
+    //    alert("Please Fill Up Fields");
   
      }
       
