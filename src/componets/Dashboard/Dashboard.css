@@ -1,4 +1,5 @@
-activeStyle{
-    fontWeight: bold;
+
+  .active {
     color: red;
+    font-weight: bold;
   }

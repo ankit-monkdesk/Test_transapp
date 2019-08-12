@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Route,HashRouter as Router,Link,NavLink,Switch} from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 
 import styled from 'styled-components';
 import true_trans from '../Dashboard/true_trans.png';
 import Add_company from './Add_company/Add_company';
 import Profile from './Profile/Profile';
+import "./Dashboard.css";
 
 
 
@@ -122,6 +124,8 @@ text-align: center;
 
 class Dashboard extends Component {
 
+ 
+
   constructor(props) {
   
     super(props);
@@ -140,15 +144,15 @@ class Dashboard extends Component {
 
  
     
-  render() {
+  render( ) {
    
     return (
      
       <div className="main_dashboard">
-      
-     
-         <Router basename="/">
+          <Router basename="/">
            <div>
+     
+        
            <Header>
            <img src={true_trans} alt="true_trans" />
                 <Dropdown>
@@ -156,37 +160,44 @@ class Dashboard extends Component {
                     &nbsp;  <i className="fa fa-caret-down"></i>
                   </Dropbtn>
                   <DropdownContent>
-                    <NavLink className="selected" activeStyle={{
-                    fontWeight: "bold",
-                    color: "red"
-                  }} to="/profile">Profile</NavLink>
+                    <NavLink
+                   className="Nav_link"
+                   activeClassName="activeRoute"
+                   activeStyle={{  color: 'red', fontWeight: 'bold' }}
+                  to="/profile">Profile</NavLink>
                     <a onClick={this.logout}>Logout</a>
                     
                   </DropdownContent>
                 </Dropdown> 
+             
                 
-                <NavLink   className="selected"  activeStyle={{
-                    fontWeight: "bold",
-                    color: "red"
-                  }} to="/home_page" >Home</NavLink >
+                <NavLink  className="Nav_link"
+                activeClassName="activeRoute"
+                activeStyle={{  color: 'red',   fontWeight: 'bold' }}
+                 to="/" >Home</NavLink >
                
             </Header>
+
+        
 
             <Content>
          
               <SubContent>
+           
                <Switch>
-                <Route exact path="/home_page" component={HomePage}/> 
+              
+                <Route  exact path="/" component={HomePage}/> 
                 <Route  path="/add_company" component={Add_company}/>
                 <Route  path="/profile" component={Profile}/>
                 </Switch>
+
               </SubContent>
                
             </Content>
-
-
+  
            </div> 
          </Router>
+        
         </div>  
         
 
@@ -195,6 +206,8 @@ class Dashboard extends Component {
   }
  
 }
+
+
 
 class AddCompany extends Component{
   constructor(props){
@@ -246,6 +259,6 @@ class HomePage extends Component{
     
   }
 }
- 
-export default Dashboard;
+export default withRouter(Dashboard);
+// export default Dashboard;
   
