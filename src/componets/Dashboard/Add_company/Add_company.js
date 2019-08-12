@@ -62,6 +62,7 @@ class Add_company extends Component {
       
       axios.post('https://idea.truebook.in/tps_api/index.php?view=companysetup',formData,init)
       .then(response => {
+        
         this.props.history.push("/list_company");
       })
       .catch(err => {
@@ -69,7 +70,7 @@ class Add_company extends Component {
       })
      }else{
        alert("Please Fill Up Fields");
-    //    this.props.history.push("/register");
+  
      }
       
     }
@@ -97,33 +98,33 @@ class Add_company extends Component {
    
            if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') === -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
               formIsValid = false;
-              errors["email"] = "Email is not valid";
+              errors["email"] = "*Email is not valid";
             }
        } 
       // mobileno
         if(!fields["mobile_no"]){
            formIsValid = false;
-           errors["mobile_no"] = "Only Digits Allow";
+           errors["mobile_no"] = "*Only Digits Allow";
         }        
         if(!fields["pan_no"]){
             formIsValid = false;
-            errors["pan_no"] = "Pan Number Required";
+            errors["pan_no"] = "*Pan Number Required";
          }   
           if(!fields["gst_no"]){
            formIsValid = false;
-           errors["gst_no"] = "Gst Number Required";
+           errors["gst_no"] = "*Gst Number Required";
         }   
         if(!fields["cin_no"]){
             formIsValid = false;
-            errors["cin_no"] = "Cin Number Required";
+            errors["cin_no"] = "*Cin Number Required";
          }   
          if(!fields["city"]){
             formIsValid = false;
-            errors["city"] = "City Is Requied";
+            errors["city"] = "*City Is Requied";
          }  
          if(!fields["address"]){
             formIsValid = false;
-            errors["address"] = "Address Is Requied";
+            errors["address"] = "*Address Is Requied";
          }    
      
    
@@ -139,11 +140,18 @@ class Add_company extends Component {
     }
     render()
     {
+    
+        const field_eroor = <div className="alert alert-warning alert-dismissible fade show">
+        <strong>oopps!..</strong> Please Fillup Fields
+        <button type="button" className="close" data-dismiss="alert">&times;</button>
+        </div>; 
+
         return(
             <div className="Add_company">
                 <div id="sc-add-company">
                     <h1>Add Company Details </h1>
                     <div className="sc-container">
+                   
                         <form encType="multipart/form-data" className="add_company_form">
                             <div className="field_company">
                                 <div className="labelname">Name Of Legal Entity:</div>

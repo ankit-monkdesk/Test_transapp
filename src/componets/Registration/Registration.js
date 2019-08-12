@@ -148,7 +148,7 @@ class Registration extends React.Component{
           });
 
           if(msgcode===0){
-            
+          
                this.props.history.push("/");
           }       
         })
@@ -163,7 +163,7 @@ class Registration extends React.Component{
       
        else{
        
-          // alert("Please Fill Up Fields");
+           alert("please fillup fields");
 
         //  this.props.history.push("/register");
 

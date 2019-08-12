@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import true_trans from '../Dashboard/true_trans.png';
 import Add_company from './Add_company/Add_company';
 import Profile from './Profile/Profile';
+import List_company from './Add_company/List_company';
 import "./Dashboard.css";
 
 
@@ -138,14 +139,14 @@ class Dashboard extends Component {
   }
   logout(){
     sessionStorage.removeItem('formData');
-    localStorage.removeItem('formData');
+    localStorage.removeItem('formData',"name");
     this.props.history.push("/");
   }
 
  
     
   render( ) {
-   
+    
     return (
      
       <div className="main_dashboard">
@@ -156,7 +157,7 @@ class Dashboard extends Component {
            <Header>
            <img src={true_trans} alt="true_trans" />
                 <Dropdown>
-                  <Dropbtn >Profile 
+                  <Dropbtn >Profile
                     &nbsp;  <i className="fa fa-caret-down"></i>
                   </Dropbtn>
                   <DropdownContent>
@@ -189,6 +190,7 @@ class Dashboard extends Component {
                 <Route  exact path="/" component={HomePage}/> 
                 <Route  path="/add_company" component={Add_company}/>
                 <Route  path="/profile" component={Profile}/>
+                <Route  path="/list_company" component={List_company}/>
                 </Switch>
 
               </SubContent>
@@ -214,16 +216,9 @@ class AddCompany extends Component{
     super(props);
   }
 
-  Add_company(){
-    
-      this.props.history.push('/hello');
-  
-  }
-
 
   render(){
- 
-    
+     
     return(
       <Addcompany>
         

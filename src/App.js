@@ -6,14 +6,22 @@ import './App.css';
 import Login from './componets/Login/Login';
 import Registration from './componets/Registration/Registration';
 import Dashboard from './componets/Dashboard/Dashboard';
-import {PrivateRoute} from './componets/PrivateRoute';
 
 
-const Secreate = ({ component: Component, ...rest }) => (
+
+const LoginRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-      sessionStorage === null
+    sessionStorage.getItem('formData')
+          ?<Redirect to={{ pathname: '/dashboard', state: { from: props.location } }} />
+          : <Component {...props} />
+  )} /> 
+)
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={props => (
+      sessionStorage.getItem('formData')
           ? <Component {...props} />
-          : <Redirect to={{ pathname: '/dashboard', state: { from: props.location } }} />
+          : <Redirect to={{ pathname: '/', state: { from: props.location } }} />
   )} />
 )
 class App extends Component {
@@ -24,10 +32,10 @@ class App extends Component {
        
          <Switch>
          
-              <Route exact path="/" component={Login}/>         
+              <LoginRoute exact path="/" component={Login}/>         
               <PrivateRoute  exact path="/dashboard" component={Dashboard} />
               <Route path="/register" component={Registration} /> 
-              
+
           </Switch>
 
        
