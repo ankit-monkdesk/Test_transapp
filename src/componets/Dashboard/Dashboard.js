@@ -162,21 +162,19 @@ class Dashboard extends Component {
                   </Dropbtn>
                   <DropdownContent>
                     <NavLink
-                   className="Nav_link"
-                   activeClassName="activeRoute"
-                   activeStyle={{  color: 'red', fontWeight: 'bold' }}
-                  to="/profile">Profile</NavLink>
+                    activeClassName="activeRoute"
+                    activeStyle={{  color: 'red', fontWeight: 'bold' }}
+                    to="/profile">Profile</NavLink>
                     <a onClick={this.logout}>Logout</a>
                     
                   </DropdownContent>
-                </Dropdown> 
-             
+                </Dropdown>           
                 
-                <NavLink  className="Nav_link"
+                <NavLink  
                 activeClassName="activeRoute"
                 activeStyle={{  color: 'red',   fontWeight: 'bold' }}
-                 to="/" >Home</NavLink >
-               
+                to="/" >Home</NavLink >
+
             </Header>
 
         
@@ -215,7 +213,6 @@ class AddCompany extends Component{
   constructor(props){
     super(props);
   }
-
 
   render(){
      

@@ -98,6 +98,7 @@ class Login extends React.Component{
   let formIsValid = true;
 
   //Name
+  
    if(!fields["password"]){
       formIsValid = false;
       errors["password"] = "*Password is required";
@@ -106,9 +107,20 @@ class Login extends React.Component{
 
   //Email
   if(!fields["email"]){
-     formIsValid = false;
+     formIsValid = false; 
      errors["email"] = "*Email is required";
   }
+  if(typeof fields["email"] !== "undefined"){
+    let lastAtPos = fields["email"].lastIndexOf('@');
+    let lastDotPos = fields["email"].lastIndexOf('.');
+
+    if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') === -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2) && (!fields["email"].match(/^[0-9]+$/))) {
+       formIsValid = false;
+       errors["email"] = "*Email is not valid";
+     }
+} 
+
+  
   
 
  this.setState({errors: errors});
@@ -145,6 +157,17 @@ onChange(field, e){
         const login_success =  <FlashMessage duration={5000}>
         <span className="sendmsg">sussessfully login</span>
           </FlashMessage>; 
+
+       const Loader =  <div className="spinner-border text-primary" role="status">
+                      <span className="sr-only">Loading...</span>
+                      </div>
+
+        const Login =  <button 
+                            onClick={this.login} type="button" className="buttonui1 "> 
+                            <span> Login </span>
+                          
+                            <div className="ripples buttonRipples"><span className="ripplesCircle"></span></div>
+                      </button>  
               
             return (
             <div className="login_main">  
@@ -180,12 +203,15 @@ onChange(field, e){
                           <span style={{color: "red"}}>{this.state.errors["password"]}</span>
                           
                         </div>
-                        <button 
+                        {this.state.msgcode === 0 ? Loader:Login}
+                         {/* <button 
                             onClick={this.login} type="button" className="buttonui1 "> 
                             <span> Login </span>
+                           
                             <div className="ripples buttonRipples"><span className="ripplesCircle"></span></div>
-                       </button>   
-                     
+                         </button>     */}
+                       
+               
                         </form>
                         <div className="powered">
                         Create New ? <Link to="/register" > Register</Link>
