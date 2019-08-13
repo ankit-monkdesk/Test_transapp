@@ -236,7 +236,7 @@ class HomePage extends Component{
     const Company_id = AllFormData.data.data.tpsData.company_id;
       
     const User_type = AllFormData.data.data.tpsData.user_type;
-   
+    
     return(
       <div>
         <HomepageTittle>

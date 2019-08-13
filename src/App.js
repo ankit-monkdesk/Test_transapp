@@ -9,24 +9,37 @@ import Dashboard from './componets/Dashboard/Dashboard';
 
 
 
+
 const LoginRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-    sessionStorage.getItem('formData')
-          ?<Redirect to={{ pathname: '/dashboard', state: { from: props.location } }} />
+    localStorage.getItem('formData')
+          ? <Redirect to={{ pathname: '/dashboard', state: { from: props.location } }} />
           : <Component {...props} />
   )} /> 
 )
 
+
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-      sessionStorage.getItem('formData')
+      localStorage.getItem('formData') 
           ? <Component {...props} />
           : <Redirect to={{ pathname: '/', state: { from: props.location } }} />
   )} />
 )
+
+
 class App extends Component {
+  constructor(props) {
   
+    super(props);
+    this.state = {
+       
+    }
+  
+  }
+ 
   render() {
+ 
     return (
       <div className="app">
        
