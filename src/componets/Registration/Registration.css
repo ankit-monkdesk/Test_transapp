@@ -460,7 +460,9 @@ a {
 
 /**Add Company css here*/
 
-  
+input.file_upload {
+    padding: 9px !important;
+}
 #sc-add-company {
     background: #f0f0f0;
     width: 80%;
@@ -659,9 +661,9 @@ a.prof_link {
     margin-top: 20px;
 }
 /*LIST COMPANY CSS*/
-.list_company {
+/* .list_company {
     margin-top: 85px;
-}
+} */
 .pure-table {
     border-collapse: collapse;
     border-spacing: 0;

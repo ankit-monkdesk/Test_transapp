@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 // import { HashRouter as Router,Link } from 'react-router-dom';
 import axios from 'axios';
 class List_company extends Component {
-    componentWillMount() {
-        axios.get('APIKEY HERE')
-        .then(response => {
-          console.log(response);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-      }
+    // componentWillMount() {
+    //     axios.get('APIKEY HERE')
+    //     .then(response => {
+    //       console.log(response);
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //     });
+    //   }
     render(){
         return(
             <div className="list_company">

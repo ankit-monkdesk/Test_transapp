@@ -12,7 +12,7 @@ import Dashboard from './componets/Dashboard/Dashboard';
 
 const LoginRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-    localStorage.getItem('formData')
+    localStorage.getItem('formData')  
           ? <Redirect to={{ pathname: '/dashboard', state: { from: props.location } }} />
           : <Component {...props} />
   )} /> 
@@ -21,9 +21,9 @@ const LoginRoute = ({ component: Component, ...rest }) => (
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-      localStorage.getItem('formData') 
+      localStorage.getItem('formData')
           ? <Component {...props} />
-          : <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+          : <Redirect to={{ pathname:'/', state: { from: props.location } }} />
   )} />
 )
 

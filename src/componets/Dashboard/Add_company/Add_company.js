@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ImageUploader from 'react-images-upload';
 
 
 class Add_company extends Component {
@@ -7,14 +8,29 @@ class Add_company extends Component {
         super()
         this.state = {
             fields: {},
-            errors: {}
+            errors: {},
+            selectedFile:null ,
+            
+         
         }
         this.handleChange = this.handleChange.bind(this);
         this.AddCompanySendDetails = this.AddCompanySendDetails.bind(this);
+        this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
+        this.fileUpload=this.fileUpload.bind(this);
     }
+    fileSelectedHandler = event =>{
+        this.setState({
+            selectedFile:event.target.files[0]
+        }) 
+    }
+    fileUpload = () =>{
+        const logo = this.state.selectedFile.name
+       alert(logo);
+    }
+  
 
-
-    AddCompanySendDetails(e){
+    AddCompanySendDetails(e)
+    {
         e.preventDefault();
       if(this.handleValidation()){
         let init = {
@@ -26,6 +42,8 @@ class Add_company extends Component {
           type:     'POST',
           async:    true,
         };
+
+       
          /**START GET LOCALSTORAGE DATA */
 
          const sessionData = localStorage.getItem('formData');
@@ -43,8 +61,9 @@ class Add_company extends Component {
         const address = this.state.fields.address
         const licence_id = AllFormData.data.data.tpsData.lid
         const company_id = AllFormData.data.data.tpsData.company_id
-        alert(company_id);
         const token = AllFormData.data.data.tpsData.token
+        const logo = this.state.selectedFile.name
+       
 
         let formData = new FormData();
 
@@ -59,10 +78,11 @@ class Add_company extends Component {
         formData.append('lid', licence_id);
         formData.append('cid', company_id);
         formData.append('token', token);
+        formData.append('logo',logo);
       
       axios.post('https://idea.truebook.in/tps_api/index.php?view=companysetup',formData,init)
       .then(response => {
-        
+        console.log(response);
         this.props.history.push("/list_company");
       })
       .catch(err => {
@@ -140,18 +160,15 @@ class Add_company extends Component {
     }
     render()
     {
-    
-        const field_eroor = <div className="alert alert-warning alert-dismissible fade show">
-        <strong>oopps!..</strong> Please Fillup Fields
-        <button type="button" className="close" data-dismiss="alert">&times;</button>
-        </div>; 
+    const logo = this.state.selectedFile;
+     
 
         return(
             <div className="Add_company">
                 <div id="sc-add-company">
                     <h1>Add Company Details </h1>
                     <div className="sc-container">
-                   
+                
                         <form encType="multipart/form-data" className="add_company_form">
                             <div className="field_company">
                                 <div className="labelname">Name Of Legal Entity:</div>
@@ -190,9 +207,16 @@ class Add_company extends Component {
                             </div>
                            
                             <div className="field_company">
-                            <div className="labelname">Mobile No:</div>
+                            <div className="labelname">Contact number:</div>
                                 <input type="text" name="mobile_no" value={this.state.fields["mobile_no"]} onChange={this.handleChange.bind(this, "mobile_no")} placeholder="Contact Number" />
                                 <span className="errorMsgcompany">{this.state.errors.mobile_no}</span>
+                            </div>
+
+                            <div className="field_company">
+                            <div className="labelname">upload Logo:</div>
+
+                            <input className="file_upload" type="file" onChange={this.fileSelectedHandler}/>
+                            {/* <button onClick={this.fileUpload}>upload</button> */}
                             </div>
                             
                             <div className="clr"></div>
