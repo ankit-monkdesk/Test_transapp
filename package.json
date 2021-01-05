@@ -5,7 +5,7 @@
   "homepage": "https://master.dkbwx9mauyaxl.amplifyapp.com/",
   "dependencies": {
     "@version/react-router-v3": "^1.0.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "base-64": "^0.1.0",
     "bootstrap": "^4.3.1",
     "express": "^4.17.1",
